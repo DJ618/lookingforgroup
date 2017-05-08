@@ -1,9 +1,11 @@
 var express = require('express');
 var router = express.Router();
+var mongodb = require('mongodb');
 
-/* GET users listing. */
+/* GET home page. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  console.log("got request for index");
+  res.render('index');
 });
 
 module.exports = router;
