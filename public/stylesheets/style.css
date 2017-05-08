@@ -1,0 +1,54 @@
+*{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+
+}
+.btn{
+  padding: 10px 20px;
+  background: #98AFC7;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.btn:focus, .btn:active:focus, .btn.active:focus {
+  outline: 0 none;
+}
+.btn:hover{
+
+}
+.btn-primary {
+  background-color: #2C3539;
+  color: #ffffff;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+  background: #33a6cc;
+}
+
+.display{
+  background: #adff2f;
+  text-transform: uppercase;
+  padding:6px 16px;
+  border-radius: 4px;
+  width: 300px;
+}
+
+.well-image{
+  background-color: #848482;
+  width:60px;
+  height: 60px;
+}
+
+.well{
+  background-color: #E5E4E2;
+}
+
+body{
+  background-image: url("../public/img/fistbump.jpg");
+  background-position: center center;
+  background-color: black;
+  background-attachment: fixed;
+}
+
+h1{
+  color: white;
+}

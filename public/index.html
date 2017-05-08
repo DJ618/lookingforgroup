@@ -1,0 +1,146 @@
+<html lang="en" ng-app="lookingForGroup"><!--this is an angular directive: to go look this up-->
+  <head>
+    <!-- meta data -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- give the page a title-->
+    <title>Looking For Group</title>
+
+    <!-- Angular: link the angular cdn -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <!--bootstrap css-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- bootstrap js - this requires jquery so dont do this before brining it in -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!--now link the style sheet we wish to use-->
+    <link rel="stylesheet" href="./stylesheets/style.css">
+  </head>
+  <body>
+
+    <div ng-controller="mainController as global">
+    <div class="container">
+      <!-- page header -->
+      <div class="page-header" align="center">
+        <h1>Looking For Group</h1>
+      </div>
+
+      <!-- list controller for activity object table -->
+      <div ng-controller="activity_list_controller as list">
+        <form class="form-inline well well-sm clearfix">
+          <span class="glyphicon.gphyicon-search"></span>
+          <input type="text"
+                  placeholder="Search..."
+                  class="form-control"
+                  ng-model="global.search"><!-- this allows us to bind to a property in the controller with 2 way data binding -->
+                  <button class="btn-sm btn-primary"
+                          ng-click="global.deactivateQuery()">clear</button>
+                  <button class="btn btn-primary pull-right"
+                          data-toggle="modal"
+                          data-target="#activityinfo"
+                          ng-click="global.deactivateQuery()"
+                          >Form A Group</button>
+          </button>
+        </form>
+        <div class="row">
+          <div class="col-sm-4" ng-repeat="activity in list.data | filter:global.search"> <!-- pipe into angular search -->
+            <div class="well well-sm">
+              <div class="row">
+                <div class="col-sm-4">
+                  <h4><strong>{{activity.title}}</strong></h4>
+                  <img ng-src="{{activity.imageurl}}" class="img-rounded img-responsive well-image">
+                </div>
+                <div class="col-sm-6">
+                  <br><br>
+                  <button class="btn btn-primary pull-right"
+                          ng-click="global.changeSearch(activity)">LFG</button><!-- with angular this "activity" is still connected to the original, unlike a for loop -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br><hr><br>
+
+        <!-- current groups table -->
+        <div ng-controller="groups_list_controller as groupList"  ng-hide="global.queryActive">
+          <div class="row-sm">
+            <div class="col-sm-3" ng-repeat="group in groupList.data | filter:global.search"> <!-- pipe into angular search -->
+              <div class="well well-sm">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <p>{{group.title}}</p>
+                    <p><small>Location: {{group.location}}</small></p>
+                    <button class="btn-xs btn-primary center"
+                            ng-click="global.activateQuery(group)">More...</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- modal for clicking the formgroup button -->
+          <div class="modal fade" id="activityinfo" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                </div>
+                <div class="modal-body">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <select class="selectpicker" ng-model="groupList.newType">
+                        <option>PC</option>
+                        <option>Console</option>
+                        <option>IRL</option>
+                      </select>
+                      <br>
+                      <br>
+                      <input type="text"
+                              placeholder="Group Title..."
+                              class="form-control"
+                              ng-model="groupList.newTitle">
+                      <br>
+                      <input type="text"
+                              placeholder="Group Location..."
+                              class="form-control"
+                              ng-model="groupList.newLocation">
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" ng-click="groupList.addGroup()" data-dismiss="modal">Form My Group!</button>
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- list_controller div -->
+
+      <!-- group query -->
+      <div ng-controller="query_controller as query" ng-show="global.queryActive">
+          <div class="row">
+            <div class="col-lg-10">
+              <div class="well well-sm">
+                <h2>{{global.activeGroup.title}}</h2>
+                <h3>{{global.activeGroup.location}}</h3>
+                <h3>Member List: </h3>
+              </div>
+            </div>
+          </div>
+      </div>
+
+    </div><!-- container div class -->
+  </div><!-- main controller -->
+
+    <!--application scripts -->
+    <!-- link to the main application's JS file: this will match the app name in the html tag -->
+    <script src="./javascripts/lookingForGroup.js"></script>
+    <!-- controllers -->
+    <script src="./javascripts/controllers/list.js"></script>
+    <script src="./javascripts/controllers/groups.js"></script>
+    <script src="./javascripts/controllers/query.js"></script>
+  </body>
+</html>
