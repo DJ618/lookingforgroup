@@ -37,6 +37,12 @@ will return an array of information for each active group.
 -------------------------------------------------------------------------------
 Database Commands:
 -------------------------------------------------------------------------------
+//kill mongo if port is used
+sudo killall -15 mongod
+
+//port forward
+sudo iptables -A PREROUTING -t nat -p tcp --dport 80 -j REDIRECT --to-port 8080
+
 //start up a mongo db {advice: do this in its own console window}
 mongod --dbpath D:\docs\Code_Junkie\repos\lookingforgroup\data
 
