@@ -22,11 +22,9 @@ router.get('/getGroups', function(req,res,next){
         if(err){
           res.send(err);
         }else if(result.length){
-         res.render('grouplist', {
-           "grouplist" : result
-         });
+         res.send(result);
         }else{
-          res.render('index');
+          res.send("oops, db error");
         }
         db.close();
       });

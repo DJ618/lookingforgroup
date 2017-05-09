@@ -8,6 +8,23 @@ If your db is empty, ie. has no documents, when attempting to request
 
 
 
+-------------------------------------------------------------------------------
+Front End Use:
+-------------------------------------------------------------------------------
+www./sitname/...
+
+{/}
+main page - will go to index.html
+
+{/groupList}
+Will show a raw header list of every active groups
+
+{/api}
+Will tell the user to contact the developer for more info.
+
+{/api/getGroups}
+will return an array of information for each active group.
+
 
 -------------------------------------------------------------------------------
 Database Commands:

@@ -5,9 +5,9 @@ app.controller("groups_list_controller", groupsListController); //declare new co
 function groupsListController(){
   var vm = this;
   vm.data = server_groups_data;
-  vm.addGroup = addGroup;
 
   //adding a group
+  vm.addGroup = addGroup;
   vm.newType = "";
   vm.newTitle = "";
   vm.newLocation = "";
@@ -27,7 +27,8 @@ function groupsListController(){
   }
 }
 
-//server side data
+
+//static server side data
 var server_groups_data =
 [
   {
@@ -117,17 +118,18 @@ var server_groups_data =
   }
 ];
 
+//static dynamic test - this is what the db id returning as of now thru the api
+//var server_groups_data = [{"_id":"59110ffbbb8e9d3d347edbc1","gid":"2","type":"Console","title":"lets play halo","location":"seattle"}]
 
+//dynamic server side data
+//var server_groups_data = [];
+var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function(){
+    if (this.readyState == 4 && this.status == 200) {
+      server_groups_data = JSON.parse(xhttp.responseText);
+      console.log(server_groups_data);
+    }
+  };
 
-
-// var server_game_data;
-// var xhttp = new XMLHttpRequest();
-//   xhttp.open("GET", " http://localhost:3000/data/activities.json ", true);
-//   xhttp.onreadystatechange = function(){
-//     if (this.readyState == 4 && this.status == 200) {
-//       server_game_data = xhttp.responseText;
-//       console.log(server_game_data);
-//     }
-//   };
-//
-//   xhttp.send();
+xhttp.open("GET", " http://localhost:3000/api/getGroups ", true);
+xhttp.send();
