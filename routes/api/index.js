@@ -24,7 +24,7 @@ router.get('/getGroups', function(req,res,next){
         }else if(result.length){
          res.send(JSON.stringify(result));
         }else{
-          res.send("oops, db error");
+          res.send(JSON.stringify(result));
         }
         db.close();
       });
@@ -50,7 +50,8 @@ router.get('/addGroup/:type/:title/:location', function(req,res,next){
         "gid" : "0",
         "type": newType,
         "title": newTitle,
-        "location": newLocation
+        "location": newLocation,
+        "lastModifiedDate": new Date()
         }, function(err, result) {
           console.log("Inserted a document into db");
         });

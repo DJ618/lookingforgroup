@@ -37,10 +37,12 @@ app.controller('groups_list_controller', ['$scope','$http','$interval','$window'
     vm.newType = "";
     vm.newTitle = "";
     vm.newLocation = "";
+    location.reload();
   }
 
   //api call to get the active groups
   function getGroups(){
+    vm.data = [];
     var groupdata = [];
 
     var config = {

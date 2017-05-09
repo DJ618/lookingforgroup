@@ -10,6 +10,11 @@ Developer Tools:
 {Database query results with empty database}
 If your db is empty, ie. has no documents, when attempting to request
 /grouplist, the user will be directed to /index instead.
+
+{Known Bugs and/or unwanted behavior}
+If a new groups title ends with a ? character, inserting into the db
+will fail and cause an error alert.
+
 -------------------------------------------------------------------------------
 
 -------------------------------------------------------------------------------
@@ -41,6 +46,9 @@ mongo
 //switch to the db you want to work on
 use lookingforgroup
 
+//adding TTL trigger
+db.groups.createIndex({"lastModifiedDate": 1}, {expireAfterSeconds: 10})
+
 //grab everything
 db.groups.find().pretty()
 
@@ -51,6 +59,9 @@ db.groups.insert([{"gid":"1",
 //remove a specific document (note there is not array)
 db.groups.remove({"gid":"1",
                 "title":"im looking for a group","location":"japan"})
+
+//drop database
+mongo <dbname> --eval "db.dropDatabase()"
 
 -------------------------------------------------------------------------------
 Server Commands:
