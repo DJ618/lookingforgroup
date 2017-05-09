@@ -1,30 +1,33 @@
 -------------------------------------------------------------------------------
 Developer Notes:
 
+Environment:
+MEAN stack:
+  Mongodb, Express, Angular(with jade), NodeJS
+Developer Tools:
+  Atom text editor, google chrome browswer, powershell command line, windows10
+
 {Database query results with empty database}
 If your db is empty, ie. has no documents, when attempting to request
 /grouplist, the user will be directed to /index instead.
 -------------------------------------------------------------------------------
 
-
-
 -------------------------------------------------------------------------------
 Front End Use:
 -------------------------------------------------------------------------------
-www./sitname/...
+www./sitename/...
 
 {/}
 main page - will go to index.html
 
 {/groupList}
-Will show a raw header list of every active groups
+Will show a html header list of every active groups
 
 {/api}
 Will tell the user to contact the developer for more info.
 
 {/api/getGroups}
 will return an array of information for each active group.
-
 
 -------------------------------------------------------------------------------
 Database Commands:
@@ -49,9 +52,6 @@ db.groups.insert([{"gid":"1",
 db.groups.remove({"gid":"1",
                 "title":"im looking for a group","location":"japan"})
 
-
-
-
 -------------------------------------------------------------------------------
 Server Commands:
 -------------------------------------------------------------------------------
@@ -61,9 +61,6 @@ Go to the app's directory.
   If in Windows:
     Open up powershell with alt-f-release, then S,A
     Start the app with: npm start
-
-
-
 
 -------------------------------------------------------------------------------
 Functionality examples
@@ -94,102 +91,3 @@ mongoClient.connect(url, function(err, db){
     });
   }
 });
-
-
-
-
-
--------------------------------------------------------------------------------
-Legacy Developer Notes
--------------------------------------------------------------------------------
-
-{Original db init data}
-
-server_groups_data =
-[
-  {
-    "type":"PC",
-    "title": "League of Legends",
-    "location": "Online"
-  },
-  {
-    "type":"Console",
-    "title":"Call of Duty",
-    "location": "Seattle"
-  },
-  {
-    "type":"IRL",
-    "title": "Skateboarding",
-    "location": "Bellevue"
-  },
-  {
-    "type":"IRL",
-    "title": "Dodgeball",
-    "location": "Chicago"
-  },
-  {
-    "type":"IRL",
-    "title": "Motorcycle Ride",
-    "location": "San Diego"
-  },
-  {
-    "type":"IRL",
-    "title": "Soccer Game",
-    "location": "Mill Creek"
-  },
-  {
-    "type":"IRL",
-    "title": "Lan Party",
-    "location": "Lynnwood"
-  },
-  {
-    "type":"Console",
-    "title":"Halo",
-    "location": "Online"
-  },{
-    "type":"Console",
-    "title":"Mario",
-    "location": "LA"
-  },{
-    "type":"Console",
-    "title":"Tekken",
-    "location": "Online"
-  },{
-    "type":"Console",
-    "title":"Street Fighter and Mortal Kombat",
-    "location": "Florida Keys"
-  },{
-    "type":"Console",
-    "title":"Destiny party",
-    "location": "Seattle"
-  },{
-    "type":"Console",
-    "title":"Call of Duty zombies mode",
-    "location": "DC"
-  },
-  {
-    "type":"PC",
-    "title": "BF1 group lets roll!",
-    "location": "Online"
-  },
-  {
-    "type":"PC",
-    "title": "League of Legends group starting",
-    "location": "Online"
-  },
-  {
-    "type":"PC",
-    "title": "Rust",
-    "location": "Online"
-  },
-  {
-    "type":"PC",
-    "title": "Borderlands group",
-    "location": "Online"
-  },
-  {
-    "type":"PC",
-    "title": "Lan party!!! bring your own candy",
-    "location": "Bothell"
-  }
-];

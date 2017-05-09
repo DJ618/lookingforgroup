@@ -37,9 +37,6 @@ router.get('/addGroup/:type/:title/:location', function(req,res,next){
   var newType = req.params.type;
   var newTitle = req.params.title;
   var newLocation = req.params.location;
-
-  var insertString
-
   var mongoClient = mongodb.MongoClient;
   var url = 'mongodb://localhost:27017/lookingforgroup';
 
