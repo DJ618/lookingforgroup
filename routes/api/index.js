@@ -8,7 +8,7 @@ router.get('/', function(req,res,next){
 
 router.get('/getGroups', function(req,res,next){
   var mongoClient = mongodb.MongoClient;
-  var url = 'mongodb://localhost:27017/lookingforgroup';
+  var url = 'mongodb://localhost:27069/lookingforgroup';
 
   mongoClient.connect(url, function(err, db){
     if(err){
@@ -38,7 +38,7 @@ router.get('/addGroup/:type/:title/:location', function(req,res,next){
   var newTitle = req.params.title;
   var newLocation = req.params.location;
   var mongoClient = mongodb.MongoClient;
-  var url = 'mongodb://localhost:27017/lookingforgroup';
+  var url = 'mongodb://localhost:27069/lookingforgroup';
 
   mongoClient.connect(url, function(err, db){
     if(err){

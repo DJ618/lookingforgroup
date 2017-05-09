@@ -4,7 +4,7 @@ var mongodb = require('mongodb');
 
 router.get('/', function(req,res,next){
   var mongoClient = mongodb.MongoClient;
-  var url = 'mongodb://localhost:27017/lookingforgroup';
+  var url = 'mongodb://localhost:27069/lookingforgroup';
 
   mongoClient.connect(url, function(err, db){
     if(err){
