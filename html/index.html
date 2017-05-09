@@ -64,7 +64,7 @@
         <br><hr><br>
 
         <!-- current groups table -->
-        <div ng-controller="groups_list_controller as groupList"  ng-hide="global.queryActive">
+        <div data-ng-controller="groups_list_controller as groupList"  data-ng-hide="global.queryActive" data-ng-init="groupList.getGroups()">
           <div class="row-sm">
             <div class="col-sm-3" ng-repeat="group in groupList.data | filter:global.search"> <!-- pipe into angular search -->
               <div class="well well-sm">

@@ -1,5 +1,5 @@
 var app = angular.module("lookingForGroup", []);
-app.controller('mainController', ['$scope','$interval','$window', function($scope, $interval, $window){
+app.controller('mainController', ['$scope','$http','$interval','$window', function($scope, $http, $interval, $window){
 
   this.search = "";
   this.activeGroup = {};
@@ -17,7 +17,6 @@ app.controller('mainController', ['$scope','$interval','$window', function($scop
     this.queryActive = false;
     this.search = "";
     this.activeGroup = {};
-
   }
 
   function changeSearch(activity){

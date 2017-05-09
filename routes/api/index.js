@@ -22,7 +22,7 @@ router.get('/getGroups', function(req,res,next){
         if(err){
           res.send(err);
         }else if(result.length){
-         res.send(result);
+         res.send(JSON.stringify(result));
         }else{
           res.send("oops, db error");
         }
