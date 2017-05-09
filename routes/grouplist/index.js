@@ -28,7 +28,7 @@ router.get('/', function(req,res,next){
            "grouplist" : result
          });
         }else{
-          res.send('No documents found');
+          res.render('index');
         }
         db.close();
       });
