@@ -22,7 +22,7 @@ router.get('/getGroups', function(req,res,next){
         if(err){
           res.send(err);
         }else if(result.length){
-         res.send(result);
+         res.send(JSON.stringify(result));
         }else{
           res.send("oops, db error");
         }
@@ -30,6 +30,37 @@ router.get('/getGroups', function(req,res,next){
       });
     }
   });
+});
+
+router.get('/addGroup/:type/:title/:location', function(req,res,next){
+
+  var newType = req.params.type;
+  var newTitle = req.params.title;
+  var newLocation = req.params.location;
+
+  var insertString
+
+  var mongoClient = mongodb.MongoClient;
+  var url = 'mongodb://localhost:27017/lookingforgroup';
+
+  mongoClient.connect(url, function(err, db){
+    if(err){
+      console.log('unable to connect to server db', err);
+    }else{
+      console.log('connection established');
+
+      db.collection('groups').insertOne({
+        "gid" : "0",
+        "type": newType,
+        "title": newTitle,
+        "location": newLocation
+        }, function(err, result) {
+          console.log("Inserted a document into db");
+        });
+    }
+  });
+  res.status(200).send("Update Complete");
+  db.close();
 });
 
 module.exports = router;
