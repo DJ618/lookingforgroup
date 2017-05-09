@@ -22,7 +22,7 @@ app.controller('groups_list_controller', ['$scope','$http','$interval','$window'
       }
     }
     console.log("about to make api add group request");
-    var getURL = "http://localhost:3000/api/addGroup/" + vm.newType.toString() + "/" + vm.newTitle.toString() + "/" + vm.newLocation.toString();
+    var getURL = "http://98.145.146.53:7469/api/addGroup/" + vm.newType.toString() + "/" + vm.newTitle.toString() + "/" + vm.newLocation.toString();
     $http.get(getURL, groupdata, config)
        .then(
            function(response){
@@ -52,7 +52,7 @@ app.controller('groups_list_controller', ['$scope','$http','$interval','$window'
       }
     }
     console.log("about to make api request");
-    var getURL = "http://localhost:3000/api/getGroups/" ;
+    var getURL = "http://98.145.146.53:7469/api/getGroups/" ;
     $http.get(getURL, groupdata, config)
        .then(
            function(response){

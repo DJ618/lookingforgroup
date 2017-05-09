@@ -7,6 +7,9 @@ MEAN stack:
 Developer Tools:
   Atom text editor, google chrome browswer, powershell command line, windows10
 
+{REMINDER}
+Change the destination IP for the http requests to your respective server.
+
 {Database query results with empty database}
 If your db is empty, ie. has no documents, when attempting to request
 /grouplist, the user will be directed to /index instead.
