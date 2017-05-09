@@ -6,6 +6,9 @@ If your db is empty, ie. has no documents, when attempting to request
 /grouplist, the user will be directed to /index instead.
 -------------------------------------------------------------------------------
 
+
+
+
 -------------------------------------------------------------------------------
 Database Commands:
 -------------------------------------------------------------------------------
@@ -29,6 +32,9 @@ db.groups.insert([{"gid":"1",
 db.groups.remove({"gid":"1",
                 "title":"im looking for a group","location":"japan"})
 
+
+
+
 -------------------------------------------------------------------------------
 Server Commands:
 -------------------------------------------------------------------------------
@@ -38,3 +44,33 @@ Go to the app's directory.
   If in Windows:
     Open up powershell with alt-f-release, then S,A
     Start the app with: npm start
+
+
+
+
+-------------------------------------------------------------------------------
+Functionality examples
+-------------------------------------------------------------------------------
+
+{How to query your database}
+
+var mongodb = require('mongodb');
+mongoClient.connect(url, function(err, db){
+  if(err){
+    console.log('unable to connect to server db', err);
+  }else{
+    console.log('connection established');
+    var collection = db.collection('groups');
+    collection.find({}).toArray(function(err, result){
+      if(err){
+        res.send(err);
+      }else if(result.length){
+          //do something with the found data here
+       });
+      }else{
+        res.render('index');
+      }
+      db.close();
+    });
+  }
+});

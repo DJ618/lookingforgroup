@@ -2,12 +2,6 @@ var express = require('express');
 var router = express.Router();
 var mongodb = require('mongodb');
 
-/* GET home page. */
-// router.get('/', function(req, res, next) {
-//   console.log("got request for grouplist");
-//   res.render('grouplist');
-// });
-
 router.get('/', function(req,res,next){
   var mongoClient = mongodb.MongoClient;
   var url = 'mongodb://localhost:27017/lookingforgroup';
