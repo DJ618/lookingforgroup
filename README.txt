@@ -54,6 +54,9 @@ Functionality examples
 
 {How to query your database}
 
+var mongoClient = mongodb.MongoClient;
+var url = 'mongodb://localhost:27017/lookingforgroup';
+
 var mongodb = require('mongodb');
 mongoClient.connect(url, function(err, db){
   if(err){

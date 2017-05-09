@@ -16,6 +16,8 @@ function groupsListController(){
     var newGroup = {"type":vm.newType, "title":vm.newTitle, "location": vm.newLocation};
     vm.data.push(newGroup);
 
+    //this will insert into db later
+
     if(vm.data.length > 500){
       return;
     }
