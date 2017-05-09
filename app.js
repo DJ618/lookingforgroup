@@ -8,7 +8,8 @@ var bodyParser = require('body-parser');
 var mongo = require('mongodb');
 
 var index = require('./routes/index');
-var grouplist = require('./routes/grouplist')
+var grouplist = require('./routes/grouplist');
+var api = require('./routes/api');
 //var users = require('./routes/users');
 
 var app = express();
@@ -27,6 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/grouplist', grouplist);
+app.use('/api', api);
 //app.use('/users', users);
 
 // catch 404 and forward to error handler

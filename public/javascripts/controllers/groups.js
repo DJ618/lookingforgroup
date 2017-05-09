@@ -122,7 +122,7 @@ var server_groups_data =
 
 // var server_game_data;
 // var xhttp = new XMLHttpRequest();
-//   xhttp.open("GET", " http://localhost:8000/data/activities.json ", true);
+//   xhttp.open("GET", " http://localhost:3000/data/activities.json ", true);
 //   xhttp.onreadystatechange = function(){
 //     if (this.readyState == 4 && this.status == 200) {
 //       server_game_data = xhttp.responseText;
