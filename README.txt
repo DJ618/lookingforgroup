@@ -74,3 +74,102 @@ mongoClient.connect(url, function(err, db){
     });
   }
 });
+
+
+
+
+
+-------------------------------------------------------------------------------
+Legacy Developer Notes
+-------------------------------------------------------------------------------
+
+{Original db init data}
+
+server_groups_data =
+[
+  {
+    "type":"PC",
+    "title": "League of Legends",
+    "location": "Online"
+  },
+  {
+    "type":"Console",
+    "title":"Call of Duty",
+    "location": "Seattle"
+  },
+  {
+    "type":"IRL",
+    "title": "Skateboarding",
+    "location": "Bellevue"
+  },
+  {
+    "type":"IRL",
+    "title": "Dodgeball",
+    "location": "Chicago"
+  },
+  {
+    "type":"IRL",
+    "title": "Motorcycle Ride",
+    "location": "San Diego"
+  },
+  {
+    "type":"IRL",
+    "title": "Soccer Game",
+    "location": "Mill Creek"
+  },
+  {
+    "type":"IRL",
+    "title": "Lan Party",
+    "location": "Lynnwood"
+  },
+  {
+    "type":"Console",
+    "title":"Halo",
+    "location": "Online"
+  },{
+    "type":"Console",
+    "title":"Mario",
+    "location": "LA"
+  },{
+    "type":"Console",
+    "title":"Tekken",
+    "location": "Online"
+  },{
+    "type":"Console",
+    "title":"Street Fighter and Mortal Kombat",
+    "location": "Florida Keys"
+  },{
+    "type":"Console",
+    "title":"Destiny party",
+    "location": "Seattle"
+  },{
+    "type":"Console",
+    "title":"Call of Duty zombies mode",
+    "location": "DC"
+  },
+  {
+    "type":"PC",
+    "title": "BF1 group lets roll!",
+    "location": "Online"
+  },
+  {
+    "type":"PC",
+    "title": "League of Legends group starting",
+    "location": "Online"
+  },
+  {
+    "type":"PC",
+    "title": "Rust",
+    "location": "Online"
+  },
+  {
+    "type":"PC",
+    "title": "Borderlands group",
+    "location": "Online"
+  },
+  {
+    "type":"PC",
+    "title": "Lan party!!! bring your own candy",
+    "location": "Bothell"
+  }
+];
