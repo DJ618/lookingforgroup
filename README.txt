@@ -59,6 +59,9 @@ use lookingforgroup
 //adding TTL trigger
 db.groups.createIndex({"lastModifiedDate": 1}, {expireAfterSeconds: 10})
 
+//drop index
+db.groups.dropIndex({"lastModifiedDate": 1}, {expireAfterSeconds: 10})
+
 //grab everything
 db.groups.find().pretty()
 
@@ -76,6 +79,9 @@ mongo <dbname> --eval "db.dropDatabase()"
 -------------------------------------------------------------------------------
 Server Commands:
 -------------------------------------------------------------------------------
+//if npm start does not work, may need to install nodejs-legacy
+sudo apt-get install nodejs-legacy
+
 Go to the app's directory.
   If in linux:
     Start the app with: npm start
