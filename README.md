@@ -82,11 +82,11 @@ Server Commands:
 **//if npm start does not work, may need to install nodejs-legacy**<br/>
 sudo apt-get install nodejs-legacy
 
-Go to the app's directory.
+Go to the app's directory.<br/>
   **If in linux:**<br/>
-    Start the app with: npm start
+    Start the app with: npm start<br/>
   **If in Windows:**<br/>
-    Open up powershell with alt-f-release, then S,A
+    Open up powershell with alt-f-release, then S,A<br/>
     Start the app with: npm start
 
 -------------------------------------------------------------------------------
