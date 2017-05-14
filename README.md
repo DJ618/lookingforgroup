@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------
-_Developer Notes:_
+**Developer Notes:**
 
 Environment:
 MEAN stack:
@@ -23,16 +23,16 @@ Front End Use:
 -------------------------------------------------------------------------------
 www./sitename/...
 
-_{/}_
+**{/}**
 main page - will go to index.html
 
-_{/groupList}_
+**{/groupList}**
 Will show a html header list of every active groups
 
-_{/api}_
+**{/api}**
 Will tell the user to contact the developer for more info.
 
-_{/api/getGroups}_
+**{/api/getGroups}**
 will return an array of information for each active group.
 
 -------------------------------------------------------------------------------
@@ -41,51 +41,51 @@ Database Commands:
 //Change the destination IP for the http requests to your respective server.
 //Change mongo port with --port #
 
-_//kill mongo if port is used_
+**//kill mongo if port is used**
 sudo killall -15 mongod
 
-_//port forward_
+**//port forward**
 sudo iptables -A PREROUTING -t nat -p tcp --dport 80 -j REDIRECT --to-port 8080
 
-_//start up a mongo db {advice: do this in its own console window}_
+**//start up a mongo db {advice: do this in its own console window}**
 mongod --dbpath D:\docs\Code_Junkie\repos\lookingforgroup\data
 
-_//invoke mongodb {advice: do this in its own console window}_
+**//invoke mongodb {advice: do this in its own console window}**
 mongo
 
-_//switch to the db you want to work on_
+**//switch to the db you want to work on**
 use lookingforgroup
 
-_//adding TTL trigger_
+**//adding TTL trigger**
 db.groups.createIndex({"lastModifiedDate": 1}, {expireAfterSeconds: 10})
 
-_//drop index_
+**//drop index**
 db.groups.dropIndex({"lastModifiedDate": 1}, {expireAfterSeconds: 10})
 
-_//grab everything_
+**//grab everything**
 db.groups.find().pretty()
 
-_//insert into the db (note the array)_
+**//insert into the db (note the array)**
 db.groups.insert([{"gid":"1",
                 "title":"im looking for a group","location":"japan"}])
 
-_//remove a specific document (note there is not array)_
+**//remove a specific document (note there is not array)**
 db.groups.remove({"gid":"1",
                 "title":"im looking for a group","location":"japan"})
 
-_//drop database_
+**//drop database**
 mongo <dbname> --eval "db.dropDatabase()"
 
 -------------------------------------------------------------------------------
 Server Commands:
 -------------------------------------------------------------------------------
-_//if npm start does not work, may need to install nodejs-legacy_
+**//if npm start does not work, may need to install nodejs-legacy**
 sudo apt-get install nodejs-legacy
 
 Go to the app's directory.
-  _If in linux:_
+  **If in linux:**
     Start the app with: npm start
-  _If in Windows:_
+  **If in Windows:**
     Open up powershell with alt-f-release, then S,A
     Start the app with: npm start
 
@@ -93,7 +93,7 @@ Go to the app's directory.
 Functionality examples
 -------------------------------------------------------------------------------
 
-_{How to query your database}_
+**{How to query your database}**
 '''javascript
 var mongoClient = mongodb.MongoClient;
 var url = 'mongodb://localhost:27017/lookingforgroup';
