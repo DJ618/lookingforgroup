@@ -2,7 +2,7 @@
 **Developer Notes:**
 
 **Environment:**
-**MEAN stack:**
+**MEAN stack:**<br/>
   Mongodb, Express, Angular(with jade), NodeJS
 **Developer Tools:**
   Atom text editor, google chrome browswer, powershell command line, windows10
