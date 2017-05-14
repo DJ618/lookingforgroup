@@ -4,15 +4,15 @@
 **Environment:**
 **MEAN stack:**<br/>
   Mongodb, Express, Angular(with jade), NodeJS
-**Developer Tools:**
+**Developer Tools:**<br/>
   Atom text editor, google chrome browswer, powershell command line, windows10
 
 
-**{Database query results with empty database}**
+**{Database query results with empty database}**<br/>
 If your db is empty, ie. has no documents, when attempting to request
 /grouplist, the user will be directed to /index instead.
 
-**{Known Bugs and/or unwanted behavior}**
+**{Known Bugs and/or unwanted behavior}**<br/>
 If a new groups title ends with a ? character, inserting into the db
 will fail and cause an error alert.
 
@@ -23,16 +23,16 @@ Front End Use:
 -------------------------------------------------------------------------------
 www./sitename/...
 
-**{/}**
+**{/}**<br/>
 main page - will go to index.html
 
-**{/groupList}**
+**{/groupList}**<br/>
 Will show a html header list of every active groups
 
-**{/api}**
+**{/api}**<br/>
 Will tell the user to contact the developer for more info.
 
-**{/api/getGroups}**
+**{/api/getGroups}**<br/>
 will return an array of information for each active group.
 
 -------------------------------------------------------------------------------
@@ -41,51 +41,51 @@ Database Commands:
 //Change the destination IP for the http requests to your respective server.
 //Change mongo port with --port #
 
-**//kill mongo if port is used**
+**//kill mongo if port is used**<br/>
 sudo killall -15 mongod
 
-**//port forward**
+**//port forward**<br/>
 sudo iptables -A PREROUTING -t nat -p tcp --dport 80 -j REDIRECT --to-port 8080
 
-**//start up a mongo db {advice: do this in its own console window}**
+**//start up a mongo db {advice: do this in its own console window}**<br/>
 mongod --dbpath D:\docs\Code_Junkie\repos\lookingforgroup\data
 
-**//invoke mongodb {advice: do this in its own console window}**
+**//invoke mongodb {advice: do this in its own console window}**<br/>
 mongo
 
-**//switch to the db you want to work on**
+**//switch to the db you want to work on**<br/>
 use lookingforgroup
 
-**//adding TTL trigger**
+**//adding TTL trigger**<br/>
 db.groups.createIndex({"lastModifiedDate": 1}, {expireAfterSeconds: 10})
 
-**//drop index**
+**//drop index**<br/>
 db.groups.dropIndex({"lastModifiedDate": 1}, {expireAfterSeconds: 10})
 
-**//grab everything**
+**//grab everything**<br/>
 db.groups.find().pretty()
 
-**//insert into the db (note the array)**
+**//insert into the db (note the array)**<br/>
 db.groups.insert([{"gid":"1",
                 "title":"im looking for a group","location":"japan"}])
 
-**//remove a specific document (note there is not array)**
+**//remove a specific document (note there is not array)**<br/>
 db.groups.remove({"gid":"1",
                 "title":"im looking for a group","location":"japan"})
 
-**//drop database**
+**//drop database**<br/>
 mongo <dbname> --eval "db.dropDatabase()"
 
 -------------------------------------------------------------------------------
 Server Commands:
 -------------------------------------------------------------------------------
-**//if npm start does not work, may need to install nodejs-legacy**
+**//if npm start does not work, may need to install nodejs-legacy**<br/>
 sudo apt-get install nodejs-legacy
 
 Go to the app's directory.
-  **If in linux:**
+  **If in linux:**<br/>
     Start the app with: npm start
-  **If in Windows:**
+  **If in Windows:**<br/>
     Open up powershell with alt-f-release, then S,A
     Start the app with: npm start
 
@@ -93,8 +93,8 @@ Go to the app's directory.
 Functionality examples
 -------------------------------------------------------------------------------
 
-**{How to query your database}**
-'''javascript
+**{How to query your database}**<br/>
+```javascript
 var mongoClient = mongodb.MongoClient;
 var url = 'mongodb://localhost:27017/lookingforgroup';
 
@@ -118,3 +118,4 @@ mongoClient.connect(url, function(err, db){
     });
   }
 });
+```
