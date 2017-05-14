@@ -1,18 +1,18 @@
 -------------------------------------------------------------------------------
 **Developer Notes:**
 
-Environment:
-MEAN stack:
+**Environment:**
+**MEAN stack:**
   Mongodb, Express, Angular(with jade), NodeJS
-Developer Tools:
+**Developer Tools:**
   Atom text editor, google chrome browswer, powershell command line, windows10
 
 
-{Database query results with empty database}
+**{Database query results with empty database}**
 If your db is empty, ie. has no documents, when attempting to request
 /grouplist, the user will be directed to /index instead.
 
-{Known Bugs and/or unwanted behavior}
+**{Known Bugs and/or unwanted behavior}**
 If a new groups title ends with a ? character, inserting into the db
 will fail and cause an error alert.
 
