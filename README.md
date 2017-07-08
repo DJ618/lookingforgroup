@@ -5,7 +5,7 @@
 **MEAN stack:**<br/>
   Mongodb, Express, Angular(with jade), NodeJS
 **Developer Tools:**<br/>
-  Atom text editor, google chrome browswer, powershell command line, windows10
+  Atom text editor, google chrome browser, powershell command line, windows10
 
 
 **{Database query results with empty database}**<br/>
@@ -24,7 +24,7 @@ Front End Use:
 www./sitename/...
 
 **{/}**<br/>
-main page - will go to index.html
+Main page - will go to index.html
 
 **{/groupList}**<br/>
 Will show a html header list of every active groups
@@ -33,7 +33,7 @@ Will show a html header list of every active groups
 Will tell the user to contact the developer for more info.
 
 **{/api/getGroups}**<br/>
-will return an array of information for each active group.
+Will return an array of information for each active group.
 
 -------------------------------------------------------------------------------
 Database Commands:
